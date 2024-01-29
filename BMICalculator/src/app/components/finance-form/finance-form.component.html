@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="container">
+        <h5>Finance Calculator</h5>
+    </div>
+    <div>
+        <form>
+            <div class="mb-3">
+                <label for="financeId" class="form-label">Id</label>
+                <input type="number" name="financeId" class="form-control"
+                    [(ngModel)]="financeCalculator.financeId" id="financeId">
+            </div>
+            
+            <div class="mb-3">
+                <label for="financeName" class="form-label">Finance Name</label>
+                <!-- <input type="text" name="financeName" class="form-control"
+                            [(ngModel)]="financeCalculator.financeName" id="financeName"> -->
+                <select name="financeName" class="form-control" [(ngModel)]="financeCalculator.financeName"
+                    id="financeName">
+                    <option value="House">House</option>
+                    <option value="Education">Education</option>
+                    <option value="Vehicle">Vehicle</option>
+                    <option value="Gold">Gold</option>
+                </select>
+
+            </div>
+            
+            <div class="mb-3">
+                <label for="amount" class="form-label">Amount</label>
+                <input type="number" name="amount" class=" form-control" [(ngModel)]="financeCalculator.amount"
+                    id="amount">
+            </div>
+            <div class="mb-3">
+                <label for="timePeriod" class=" form-label">Time Period</label>
+                <input type="number" name="timePeriod" class="form-control" [(ngModel)]="financeCalculator.timePeriod"
+                    id="timePeriod">
+            </div>
+
+        </form>
+        <div class="button-container">
+            
+            <button type="reset"  class="btn btn-primary">Clear</button>
+            <button type="button" (click)="onSubmit()" class="btn btn-primary">Calculate</button>
+        </div>
+
+        <div class="card" *ngIf="financeCalculator">
+            <div class="card-body">
+                <table>
+                    <tr>
+                        <td class="td">Result:</td>
+                        <td>{{ financeCalculator.result}}</td>
+                        <br>
+                    </tr>
+                    <tr>
+                        <td class="td">Months:</td>
+                        <td>{{ financeCalculator.months}}</td>
+                        <br>
+                    </tr>
+                    <tr>
+                        <td class="td">Monthly Rate:</td>
+                        <td>{{ financeCalculator.monthyRate}}</td>
+                        <br>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

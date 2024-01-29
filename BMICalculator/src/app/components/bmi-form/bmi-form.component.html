@@ -1,0 +1,53 @@
+
+<div class="container">
+    <h5 class="modal-title" id="exampleModalLabelbmr">BMI Calculator</h5>
+    <div class="modal-body">
+        <form>
+            
+
+            <div class="mb-3">
+                <label for=" name" class="form-label">Name</label>
+                <input type="text" name="name" class="form-control" [(ngModel)]="bmiCalculator.name" id="name">
+            </div>
+            <div class="mb-3">
+                <label for="age" class="form-label">Age</label>
+                <input type="text" name="age" class="form-control" [(ngModel)]="bmiCalculator.age" id="age">
+            </div>
+            <div class="mb-3">
+                <label for="gender" class="form-label">Gender</label>
+                <select name="gender" class="form-control" [(ngModel)]="bmiCalculator.gender" id="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="weight" class="form-label">Weight</label>
+                <input type="number" name="weight" class="form-control" [(ngModel)]="bmiCalculator.weight" id="weight">
+            </div>
+            <div class="mb-3">
+                <label for="height" class="form-label">Height</label>
+                <input type="number" name="height" class="form-control" [(ngModel)]="bmiCalculator.height" id="height">
+            </div>
+        </form>
+        <div class="button-container">
+
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+             <button type="button" (click)="onSubmitbmi()" class="btn btn-primary">Calculate</button>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <table>
+                    <tr>
+                        <td class="td">BMI:</td><td>{{ bmiCalculator.bmi}}</td>
+
+                    </tr>
+                    <tr>
+                        <td class="td">BMI category:</td>
+                        &nbsp;<td>{{ bmiCalculator.bmicategory}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

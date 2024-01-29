@@ -1,0 +1,58 @@
+<div class="container">
+    <h5 class="modal-title" id="exampleModalLabelbmr">BMR Calculator</h5>
+
+    <div class="modal-body">
+        <form class="exaple-form">
+            <div class="mb-3">
+                <label for=" name" class="form-label">Name</label>
+                <input type="text" name="name" class="form-control" [(ngModel)]="bmrCalculator.name" id="name">
+            </div>
+            <div class="mb-3">
+                <label for="gender" class="form-label">Gender</label>
+                <select type="gender" name="gender" class="form-control" [(ngModel)]="bmrCalculator.gender" id="gender">
+                    <option value="M">M</option>
+                    <option value="F">F</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="height" class="form-label">Height</label>
+                <input type="number" name="height" class="form-control" [(ngModel)]="bmrCalculator.height" id="height">
+            </div>
+            <div class="mb-3">
+                <label for="weight" class="form-label">Weight</label>
+                <input type="number" name="weight" class="form-control" [(ngModel)]="bmrCalculator.weight" id="weight">
+            </div>
+            <div class="mb-3">
+                <label for="age" class="form-label">Age</label>
+                <input type="number" name="age" class="form-control" [(ngModel)]="bmrCalculator.age" id="age">
+            </div>
+            <div class="mb-3">
+                <label for="activitylevel" class="form-label">Activity Level</label>
+                <select name="activitylevel" class="form-control" [(ngModel)]="bmrCalculator.activitylevel"
+                    id="activitylevel">
+                    <option value="Sedentary">Sedentary</option>
+                    <option value="Lightly active">Lightly active</option>
+                    <option value="Moderately active">Moderately active</option>
+                    <option value="Very active">Very active</option>
+                    <option value="Super active">Super active</option>
+                </select>
+            </div>
+        </form>
+        <div class="button-container">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" (click)="onSubmitbmr()" class="btn btn-primary">Add</button>
+        </div>
+        <div class="card" *ngIf="bmrCalculator">
+            <div class="card-body">
+                <table>
+                    <tr>
+                        <td class="td">bmr:</td>
+                        <td>{{ bmrCalculator.bmr}}</td>
+                    </tr>
+                    <td class="td">tdee:</td>
+                    <td>{{ bmrCalculator.tdee}}</td>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
