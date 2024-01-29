@@ -1,0 +1,56 @@
+Define a class named "BMImain".
+In the main method of the "BMImain" class, create an instance of the "Input" class and call its "input" method.
+Create an instance of the "Bmimainmenu" class and call its "continuep" method.
+Define a class named Input
+Define a method named input()
+Create a Scanner object for user input
+Define an enum named WeightCategory with four values
+Prompt user to enter their name and age
+Store name and age in respective variables
+Prompt user to select a group from given options and store the choice in a variable named choice
+Based on the choice, set the lower and upper limits for BMI calculation and assign the group name to a variable named groupName
+Prompt user to enter their weight in kilograms and height in centimeters and store them in respective variables
+Create an object of class BMICalculation and call its calculateBMI() method by passing weight and height as arguments to get the BMI value
+Divide the weight by the square of the height in meters to calculate BMI.
+Return the calculated BMI.
+Determine the weight category of the user based on their BMI value and assign it to a variable named weightCategory
+Display the BMI value and weight category to the user
+Prompt user to retrieve their previous BMI data and store the response in a variable named response
+If response is "Y", create an object of class RetriveData and call its retrieveData() method by passing the name of the user as an argument
+Prompt user to retrieve their progress chart and store the response in a variable named displayProgressChart
+If displayProgressChart is "Y", create an object of class DisplayProgressChart and call its ProgressChart() method by passing the name of the user as an argument
+Create an object of class SaveData and call its Data() method by passing name, weight, height, and BMI value as arguments to save the data to a file
+Prompt user to reset the history file and store the response in a variable named resetAnswer
+If resetAnswer is "y", call the resetHistoryFile() method to reset the history file
+End.
+Define a class called "SaveData"
+Create a method called "Data" that takes four parameters: "name" (a String), "weight" (a double), "height" (a double), and "bmi" (a double)
+Inside the "Data" method, create a try-catch block for handling IOExceptions
+Inside the try block:
+Create a new FileWriter object and pass in "bmi_data.txt" as the file name and "true" as the boolean value to indicate that we want to append to the file instead of overwriting it.
+Create a new BufferedWriter object and pass in the FileWriter object as a parameter
+Get the current date and time using LocalDateTime.now()
+Format the date and time using DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")
+Convert the LocalDateTime object to a String using the formatter
+Write the data to the file using bufferedWriter.write(), concatenating the date/time string, person's name, weight, height, and BMI using appropriate delimiters and formatting
+Add a newline character to the end of the line using bufferedWriter.newLine()
+Close the BufferedWriter object using bufferedWriter.close()
+In the catch block, print the stack trace using e.printStackTrace()
+Create a new Scanner object and pass the File object as a parameter.
+Use a while loop to iterate through each line of the file, checking if the first value in each line (the name) matches the name parameter passed to the method.
+If a match is found, print out the name, weight, height, and BMI from the corresponding line.
+Close the Scanner object.
+If the file is not found, print the stack trace of the FileNotFoundException.
+End of the retrieveData method.
+End of the RetriveData class.
+Create an ArrayList to store BMIs
+Loop through each line in the file
+Split the line into an array of values using a comma separator
+If the first value in the array (i.e., the name) matches the given name, extract the fourth value (i.e., the BMI)
+Convert the BMI to a double and add it to the ArrayList
+Close the file
+If the size of the ArrayList is greater than 1, display a progress chart
+Otherwise, display a message indicating that there is not enough data to display a progress chart
+The progress chart should display the name of the person and a header with a line of hyphens
+Loop through the BMIs in the ArrayList and display each one, along with the measurement number (i.e., index + 1) and formatted to two decimal places
+End the loop and the method.
